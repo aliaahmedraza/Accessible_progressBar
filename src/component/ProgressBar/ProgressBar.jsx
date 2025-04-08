@@ -3,10 +3,24 @@ import "./ProgressBar.css";
 
 const ProgressBar = ({ progress }) => {
   const [animatedProgress,setAnimatedProgress]= useState(0);
+  const [stylesLoaded, setStylesLoaded] = useState(false);
   useEffect(()=>{
     const timer = setTimeout(() => setAnimatedProgress(progress), 100);
     return () => clearTimeout(timer);
   },[progress])
+  useEffect(() => {
+    const onLoad = () => {
+      setStylesLoaded(true);
+    };
+  
+    window.addEventListener("load", onLoad);
+    return () => window.removeEventListener("load", onLoad);
+  }, []);
+  if (!stylesLoaded){
+    return(
+      <div>Loading...</div>
+    )
+  }
   return (
     <div className="progress-bar-component">
       <strong><h1>Progress Bar</h1></strong>
