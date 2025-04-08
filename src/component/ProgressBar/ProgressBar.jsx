@@ -9,12 +9,10 @@ const ProgressBar = ({ progress }) => {
     return () => clearTimeout(timer);
   },[progress])
   useEffect(() => {
-    const onLoad = () => {
+    window.addEventListener("load", () => {
       setStylesLoaded(true);
-    };
-  
-    window.addEventListener("load", onLoad);
-    return () => window.removeEventListener("load", onLoad);
+    });
+    return () => window.removeEventListener("load", () => {});
   }, []);
   if (!stylesLoaded){
     return(
