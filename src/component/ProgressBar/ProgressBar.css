@@ -1,0 +1,23 @@
+.progress-bar-component {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 10px;
+  }
+  .progress-bar-outer-container{
+ border: 1px solid black;
+ border-radius: 10px;
+ overflow: hidden;
+ height: 25px;
+
+}
+  .progress-bar-inner-progress{
+    background-color: green;
+    color: white;
+    text-align: right;
+    transition: 0.5s ease-in;
+    white-space: nowrap;
+    line-height: 25px;
+  }
