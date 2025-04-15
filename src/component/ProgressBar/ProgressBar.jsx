@@ -22,7 +22,7 @@ const ProgressBar = ({ progress }) => {
     )
   }
   return (
-    <div className="progress-bar-component">
+      <div className="progress-bar-component">
       <strong><h1>Progress Bar</h1></strong>
         <div className="progress-bar-outer-container mt-5">
           <div
@@ -43,6 +43,7 @@ const ProgressBar = ({ progress }) => {
         </div>
   
      </div>
+
   );
 };
 

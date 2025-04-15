@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@layer base {
+    :root {
+      --ant-primary-color: #1DA57A;
+    }
+  }
